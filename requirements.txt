@@ -9,4 +9,3 @@ statistics
 Pillow
 numpy
 sklearn
-itertools
