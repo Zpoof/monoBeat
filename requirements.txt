@@ -10,3 +10,4 @@ Pillow
 numpy
 sklearn
 soundfile
+libsndfile1
