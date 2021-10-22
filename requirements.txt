@@ -1,0 +1,12 @@
+streamlit
+pandas
+librosa
+matplotlib
+wave
+tensorflow
+keras
+statistics
+Pillow
+numpy
+sklearn
+itertools
