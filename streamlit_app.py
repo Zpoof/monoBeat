@@ -44,7 +44,7 @@ def load_file_data (sound_file, duration = 12, sr = 16000):
 CLASSES = ['artifact','murmur','normal']
 SAMPLE_RATE = 16000
 MAX_SOUND_CLIP_DURATION=12   
-best_model_file="/content/drive/MyDrive/best_model_trained.hdf5"
+best_model_file="best_model_trained.hdf5"
 
 label_to_int = {k:v for v,k in enumerate(CLASSES)}
 int_to_label = {v:k for k,v in label_to_int.items()}
@@ -65,21 +65,21 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 
 #scores = model.evaluate(x_test, y_test, verbose=0)
 
-st.image(Image.open('/content/drive/MyDrive/log.png'))
+st.image(Image.open('logo.png'))
 uploaded_file = st.file_uploader("Choose a file", ['wav'])
 
 
 if uploaded_file is not None:
   #audio_bytes = uploaded_file.read()
   st.audio(uploaded_file, format='audio/wav')
-  epic = np.asarray(load_file_data(uploaded_file))
+  audio_data = np.asarray(load_file_data(uploaded_file))
 
-  #st.write(epic)
-  #yes = [[epic[0]]]
-  #st.write(len(epic))
-  #st.write(type(epic))
+  #st.write(audio_data)
+  #yes = [[audio_data[0]]]
+  #st.write(len(audio_data))
+  #st.write(type(audio_data))
 
-  y_pred = model.predict(epic, batch_size=32)
+  y_pred = model.predict(audio_data, batch_size=32)
   #st.write(y_pred)
   res = np.argmax(y_pred,axis=1)
   #st.write(res[0])
