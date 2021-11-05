@@ -64,7 +64,7 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 #y_pred = np.argmax(y_pred,axis=1)
 
 #scores = model.evaluate(x_test, y_test, verbose=0)
-
+st.set_page_config(page_title = 'monoBeat', page_icon = ':heart:')
 st.image(Image.open('logo.png'))
 uploaded_file = st.file_uploader("Choose a file", ['wav'])
 
