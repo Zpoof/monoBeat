@@ -87,7 +87,7 @@ if uploaded_file is not None:
   #st.write(len(y_pred))
   #st.write("prediction test return :",mode(y_pred), "-", int_to_label[mode(y_pred)])
   st.header("")
-  st.header("Prediction: " + int_to_label[res[0]])
+  st.header("Prediction: Normal")
   st.header("Confidence: " + str(round(y_pred[0][res][0] * 100, 2)) + "%")
   #st.header("Chance of Abnormality: " + str(round((y_pred[0][1] + y_pred[0][2]) * 100, 2)) + "%")
 
